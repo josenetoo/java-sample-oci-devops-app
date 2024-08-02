@@ -1,4 +1,4 @@
-FROM ghcr.io/graalvm/native-image:java17
+FROM container-registry.oracle.com/graalvm/native-image:22
 
 WORKDIR /app
 
