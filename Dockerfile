@@ -1,16 +1,15 @@
-FROM container-registry.oracle.com/graalvm/native-image:21-ol8
+FROM ghcr.io/graalvm/native-image:java17 as builder
 
 WORKDIR /app
 
 COPY pom.xml .
 COPY src/main/java .
 
-#RUN apk add --no-cache maven
 RUN mvn package -Dnative-image
 
-# FROM scratch
+FROM scratch
 
-# COPY --from=builder /app/target/my-java-app /app
+COPY --from=builder /app/target/my-java-app /app
 
 EXPOSE 8080
 
