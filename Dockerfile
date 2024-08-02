@@ -1,15 +1,16 @@
-FROM ghcr.io/graalvm/native-image:java17-22.3.0 as builder
+FROM ghcr.io/graalvm/graalvm-ce:latest
 
 WORKDIR /app
 
 COPY pom.xml .
 COPY src/main/java .
 
+RUN apk add --no-cache maven
 RUN mvn package -Dnative-image
 
-FROM scratch
+# FROM scratch
 
-COPY --from=builder /app/target/my-java-app /app
+# COPY --from=builder /app/target/my-java-app /app
 
 EXPOSE 8080
 
