@@ -1,11 +1,11 @@
-FROM container-registry.oracle.com/graalvm/jdk:22
+FROM container-registry.oracle.com/graalvm/native-image:21-ol8
 
 WORKDIR /app
 
 COPY pom.xml .
 COPY src/main/java .
 
-RUN apk add --no-cache maven
+#RUN apk add --no-cache maven
 RUN mvn package -Dnative-image
 
 # FROM scratch
