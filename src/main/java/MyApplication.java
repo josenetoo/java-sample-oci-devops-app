@@ -1,16 +1,20 @@
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+package com.example.demo;
 
-import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Path("/")
-public class MyApplication {
+@SpringBootApplication
+@RestController
+public class DemoApplication {
 
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @GetMapping("/")
     public String hello() {
-        return "Hello from Java on GraalVM!";
+        return "Hello from Spring Boot with GraalVM!";
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
     }
 }
