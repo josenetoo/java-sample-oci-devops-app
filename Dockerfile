@@ -5,7 +5,7 @@ WORKDIR /app
 COPY pom.xml .
 COPY src/main/java .
 
-RUN apk add --no-cache maven
+#RUN apk add --no-cache maven
 RUN mvn package -Dnative-image
 
 # FROM scratch
