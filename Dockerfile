@@ -1,4 +1,4 @@
-FROM container-registry.oracle.com/graalvm/native-image:22
+FROM container-registry.oracle.com/graalvm/jdk:22
 
 WORKDIR /app
 
