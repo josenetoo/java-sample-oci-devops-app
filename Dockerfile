@@ -1,4 +1,4 @@
-FROM ghcr.io/graalvm/native-image:java17-22.3.0
+FROM ghcr.io/graalvm/graalvm-ce:latest
 
 WORKDIR /app
 
