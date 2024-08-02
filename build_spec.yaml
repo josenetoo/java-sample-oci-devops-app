@@ -28,7 +28,7 @@ steps:
     timeoutInSeconds: 1200
     name: "Build container image"
     command: |
-      cd ${OCI_WORKSPACE_DIR}/
+      cd ${OCI_PRIMARY_SOURCE_DIR}
       docker build --pull --rm -t graal_java_sample_app .      
      
 outputArtifacts:
