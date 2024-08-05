@@ -17,5 +17,5 @@
 
 FROM ubuntu:jammy
 EXPOSE 8080
-COPY target/my-java-app /my-java-app
+COPY target/demo-0.0.1-SNAPSHOT.jar /my-java-app
 CMD ["/my-java-app"]
