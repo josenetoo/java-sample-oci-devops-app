@@ -52,9 +52,9 @@ outputArtifacts:
     # this is only the locally exported container image name
     # this location tag doesn't affect the tag used to deliver the container image
     # to the Container Registry.
-    location: hello-java:latest
-  - name: oke_deploy_manifest
-    type: BINARY
-    # this location tag doesn't effect the tag used to deliver the container image
-    # to the Container Registry
-    location: ${OCI_PRIMARY_SOURCE_DIR}/oci-oke-deployment.yaml
+  #   location: hello-java:latest
+  # - name: oke_deploy_manifest
+  #   type: BINARY
+  #   # this location tag doesn't effect the tag used to deliver the container image
+  #   # to the Container Registry
+  #   location: ${OCI_PRIMARY_SOURCE_DIR}/oci-oke-deployment.yaml
