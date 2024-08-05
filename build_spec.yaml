@@ -33,8 +33,7 @@ steps:
   - type: Command
     name: "Build a native executable "
     command: |
-      # mvn --no-transfer-progress -Pnative -DskipTests package
-      mvn package -Dnative-image
+      mvn --no-transfer-progress -Pnative -DskipTests package
   - type: Command
     name: "Build a container image with Native executable"
     command: |
