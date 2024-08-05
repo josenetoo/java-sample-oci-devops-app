@@ -1,16 +1,21 @@
-FROM ghcr.io/graalvm/native-image:java17 as builder
+# FROM ghcr.io/graalvm/native-image:java17 as builder
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY pom.xml .
-COPY src/main/java .
+# COPY pom.xml .
+# COPY src/main/java .
 
-RUN mvn package -Dnative-image
+# RUN mvn package -Dnative-image
 
-FROM scratch
+# FROM scratch
 
-COPY --from=builder /app/target/my-java-app /app
+# COPY --from=builder /app/target/my-java-app /app
 
+# EXPOSE 8080
+
+# CMD ["/app/my-java-app"]
+
+FROM ubuntu:jammy
 EXPOSE 8080
-
-CMD ["/app/my-java-app"]
+COPY target/my-java-app /my-java-app
+CMD ["/my-java-app"]
