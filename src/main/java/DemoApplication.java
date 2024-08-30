@@ -11,7 +11,7 @@ public class DemoApplication {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello from Spring Boot!! Oracle DevOps Day - OCI Devops !!";
+        return "Hello from Spring Boot!! Oracle DevOps Day!!";
     }
 
     public static void main(String[] args) {
