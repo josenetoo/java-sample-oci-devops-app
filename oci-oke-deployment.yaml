@@ -23,18 +23,16 @@ spec:
               protocol: TCP
           resources:
             requests:
-              cpu: 100m
-              memory: 256Mi
+              cpu: 2
+              memory: 1Gi
             limits:
-              cpu: 200m
-              memory: 512Mi
+              cpu: 4
+              memory: 2Gi
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: java-graalvm-app-service
-  annotations: 
-    service.beta.kubernetes.io/oci-load-balancer-shape: "10Mbps"
 spec:
   type: ClusterIP
   ports:
